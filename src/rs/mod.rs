@@ -4,3 +4,4 @@ pub mod note;
 pub mod util;
 mod Errors;
 mod replacer;
+pub mod threading;

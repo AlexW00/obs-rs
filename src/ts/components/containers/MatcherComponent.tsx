@@ -1,5 +1,6 @@
 import * as React from "react";
 import {useContext, useEffect, useState} from "react";
+import * as wasm from "../../../../pkg";
 import {
     LinkMatch, LinkTargetCandidate,
     Note,
@@ -140,7 +141,8 @@ export const MatcherComponent = () => {
                 console.log("got notes")
                 //console.log(wasmWorkerInstance)
                 //console.log(wasmWorkerInstance.add(1,5))
-                return wasmWorkerInstance.findSilent(jsNotes as Note[])
+                wasmWorkerInstance.findSilent(jsNotes)
+                return [];
             })
             .then((noteLinkMatchResults: Array<NoteMatchingResult>) => {
                 setNoteMatchingResults(noteLinkMatchResults)

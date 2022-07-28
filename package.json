@@ -4,7 +4,7 @@
   "description": "Extract url converting content into markdown",
   "main": "main.js",
   "scripts": {
-    "build": "wasm-pack build --target web && rollup --config rollup.config.js"
+    "build": "./build.sh && rollup --config rollup.config.js"
   },
   "keywords": [],
   "author": "",

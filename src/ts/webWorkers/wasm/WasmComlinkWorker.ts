@@ -2,6 +2,7 @@ import * as Comlink from "comlink";
 import rustPlugin from "../../../../pkg/obsidian_rust_plugin_bg.wasm";
 import * as wasm from "../../../../pkg";
 import {init_panic_hook, add, find, Note, find_silent} from "../../../../pkg";
+import JsNote from "../../JsNote";
 
 class WasmComlinkWorker {
     public async init () {
@@ -22,7 +23,8 @@ class WasmComlinkWorker {
         return await find(context, notes, callback);
     }
 
-    public async findSilent(notes: Note[]) {
+    public async findSilent(notes: JsNote[]) {
+        console.log(notes)
         console.log("calling find silent")
         return await find_silent(notes);
     }
